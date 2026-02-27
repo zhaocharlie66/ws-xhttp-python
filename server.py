@@ -511,9 +511,9 @@ async def request_handler(request):
                     content = f.read()
                 return web.Response(text=content, content_type='text/html')
             except:
-                return web.Response(text="NodeJS Proxy Server is Running.", content_type='text/plain')
+                return web.Response(text="Server is Running.", content_type='text/plain')
         else:
-            return web.Response(text="NodeJS Proxy Server is Running.", content_type='text/plain')
+            return web.Response(text="Server is Running.", content_type='text/plain')
 
     # WebSocket
     if request.headers.get('Upgrade', '').lower() == 'websocket':
@@ -558,4 +558,5 @@ if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
+
         pass
